@@ -19,9 +19,9 @@ jobs:
           key: ${{ github.ref }}
           path: .cache
       - name: Install dependencies
-        run: |
-          pip install mkdocs
-          pip install mkdocs-material 
-          pip install mkdocs-table-reader-plugin
+        run: pip install \
+              mkdocs \
+              mkdocs-material \
+              mkdocs-table-reader-plugin
       - name: Build and Deploy
         run: mkdocs gh-deploy --force
