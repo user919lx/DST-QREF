@@ -1,0 +1,22 @@
+name,desc
+DecoratorNode,无论子节点如何，状态均为FAILED
+NotDecorator,子节点为SUCCESS，自身则为FAILED；子节点为FAILED，自身则为SUCCESS；其它情况子节点状态等同自身状态
+FailIfRunningDecorator,子节点为RUNNING，自身则为FAILED；其它情况子节点状态等同自身状态
+FailIfSuccessDecorator,子节点为SUCCESS，自身则为FAILED；其它情况子节点状态等同自身状态
+ConditionNode,条件节点，构造函数中附带一个function参数，称之为检测函数，每当访问该节点时，会执行检测函数，如果结果为true，则节点状态为SUCCESS，否则为FAILED
+ConditionWaitNode,与ConditionNode很相似，唯一的区别在于，检测函数返回false时，节点状态不是FAILED而是RUNNING
+ActionNode,这个就是一般意义上的动作节点
+WaitNode,等待节点，构造参数为time，即等待时间
+SequenceNode,序列节点，主要用途就是按顺序遍历访问子节点
+SelectorNode,选择节点
+LoopNode,循环节点
+RandomNode,从名字来看，是一个随机选择的节点
+PriorityNode,这个节点通常是作为整个brain的根节点来使用的
+ParallelNode,平行节点，会平行地访问所有的子节点
+ParallelNodeAny,ParallelNode的子类，SUCCESS条件有差别
+EventNode,事件节点
+WhileNode, 返回一个ParallelNode，分别含有两个子节点，分别为ConditionNode和要访问的动作节点
+IfNode,返回一个SequenceNode，分别含有两个子节点，分别为ConditionNode和要访问的动作节点
+LatchNode,锁节点
+ChattyNode,这个节点虽然算是修饰节点，但是单独定义在一个文件里的，位于`behaviours/chattynode.lua`
+MinPeriod,与ChattyNode类似，单独定义在一个文件里，位于`behaviours/minperiod.lua`

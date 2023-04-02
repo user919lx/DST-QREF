@@ -1,0 +1,40 @@
+site_name: 饥荒Mod开发速查手册
+repo_url: https://github.com/user919lx/dst-qref
+theme:
+  name: 'material'
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - toc.follow
+  language: zh
+plugins:
+  - table-reader
+markdown_extensions:
+  - toc:
+      permalink: true
+extra:
+  alternate:
+    - name: 中文
+      link: /
+      lang: zh
+    - name: English
+      link: /en/ 
+      lang: en
+  social:
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:xingxing_fisher@163.com
+nav:
+  - Home: 'index.md'
+  - 手册:
+    - 系统组件(WIP): 'system_component.md'
+    - 组件(WIP): 'component.md'
+    - AI:
+      - 动作节点: 'brain_action.md'
+      - 修饰节点: 'brain_dec.md'
+    - 特效(WIP): 'fx.md'
+  - About: 'about.md'
+  
+  
+  
