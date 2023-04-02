@@ -15,13 +15,13 @@ markdown_extensions:
   - toc:
       permalink: true
 extra:
-  alternate:
-    - name: 中文
-      link: /
-      lang: zh
-    - name: English
-      link: /en/ 
-      lang: en
+  # alternate:
+  #   - name: 中文
+  #     link: /
+  #     lang: zh
+  #   - name: English
+  #     link: /en/
+  #     lang: en
   social:
     - icon: fontawesome/solid/paper-plane
       link: mailto:xingxing_fisher@163.com
