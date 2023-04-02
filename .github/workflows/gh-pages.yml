@@ -24,11 +24,4 @@ jobs:
           pip install mkdocs-material 
           pip install mkdocs-table-reader-plugin
       - name: Build and Deploy
-        run: |
-          mkdocs build --clean
-          cd site && touch .nojekyll
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add .
-          git commit -m "Deploy documentation"
-          git push --force "https://${{ GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:refs/heads/<your-branch>
+        run: mkdocs gh-deploy --force
