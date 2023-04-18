@@ -2,6 +2,7 @@ site_name: 饥荒Mod开发速查手册
 repo_url: https://github.com/user919lx/dst-qref
 theme:
   name: 'material'
+  custom_dir: overrides
   features:
     - navigation.instant
     - navigation.tracking
@@ -13,6 +14,7 @@ theme:
   language: zh
 plugins:
   - table-reader
+  - search
 markdown_extensions:
   - toc:
       permalink: true

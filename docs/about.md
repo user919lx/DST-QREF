@@ -1,3 +1,6 @@
+---
+comments: true
+---
 
 我是LongFei，资深的饥荒Mod开发者，知名作品是人物Mod《Samansha》，相比于写Mod，更喜欢收集整理相关知识，形成体系并撰写成文。
 
