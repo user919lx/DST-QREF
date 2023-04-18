@@ -19,24 +19,27 @@ comments: true
 
 ### AddRecipe2
 
-**作用**：添加一个新的制作配方
-**参数**：
-- `name` (string)：配方的名称。
-- `ingredients` (table)：配方所需的原料列表。
-- `tech` (string)：解锁该配方所需的科技名称。
-- (可选)`config` (table)：一个可选的配置表，包含以下字段：
-    - (可选)`placer`(string)：放置物 prefab，用于显示一个建筑的临时放置物，在放下建筑后就会消失。
-    - (可选)`min_spacing` (num)：建造物的最小间距。
-    - (可选)`nounlock` (bool)：如果为 false，只能在对应的科技建筑旁制作。否则在初次解锁后，就可以在任意地点制作。
-    - (可选)`numtogive` (num)：制作成功后，玩家将获得的物品数量。
-    - (可选)`builder_tag` (string)：要求具备的制作者标签。如果人物没有此标签，便无法制作物品，可以用于人物的专属物品。
-    - (必须)`atlas` (string)：物品图标所在的 atlas 文件路径，用于制作栏显示图片，其实不填也行，但图标会是空的。
-    - (可选)`image` (string)：物品图标的文件名，其实 atlas 中已包含，不必再填。
-    - (可选)`testfn` (function)：放置时的检测函数，比如有些建筑对地形有特殊要求，可以使用此函数检测。
-    - (可选)`product` (string)：产出物，表示制作成功后产生的物品。默认
-    - (可选)`build_mode` (string)：建造模式，必须使用常量表`BUILDMODE`，形如`BUILDMODE.LAND`，具体取值为无限制（NONE）、地上（LAND）和水上（WATER）。
-    - (可选)`build_distance` (num)：建造距离，表示玩家与建筑之间的最大距离。
-- (可选)**`filters`** (table)：一个可选的过滤器列表，包含要将配方添加到的过滤器名称。
+**作用**: 添加一个新的制作配方
+
+**参数**
+
+- `name` (string): 配方的名称。
+- `ingredients` (table): 配方所需的原料列表。
+- `tech` (string): 解锁该配方所需的科技名称。
+- (可选)`config` (table): 一个可选的配置表，包含以下字段: 
+    - (可选)`placer`(string): 放置物 prefab，用于显示一个建筑的临时放置物，在放下建筑后就会消失。
+    - (可选)`min_spacing` (num): 建造物的最小间距。
+    - (可选)`nounlock` (bool): 如果为 false，只能在对应的科技建筑旁制作。否则在初次解锁后，就可以在任意地点制作。
+    - (可选)`numtogive` (num): 制作成功后，玩家将获得的物品数量。
+    - (可选)`builder_tag` (string): 要求具备的制作者标签。如果人物没有此标签，便无法制作物品，可以用于人物的专属物品。
+    - (必须)`atlas` (string): 物品图标所在的 atlas 文件路径，用于制作栏显示图片，其实不填也行，但图标会是空的。
+    - (可选)`image` (string): 物品图标的文件名，其实 atlas 中已包含，不必再填。
+    - (可选)`testfn` (function): 放置时的检测函数，比如有些建筑对地形有特殊要求，可以使用此函数检测。
+    - (可选)`product` (string): 产出物，表示制作成功后产生的物品。默认
+    - (可选)`build_mode` (string): 建造模式，必须使用常量表`BUILDMODE`，形如`BUILDMODE.LAND`，具体取值为无限制（NONE）、地上（LAND）和水上（WATER）。
+    - (可选)`build_distance` (num): 建造距离，表示玩家与建筑之间的最大距离。
+- (可选)**`filters`** (table): 一个可选的过滤器列表，包含要将配方添加到的过滤器名称。
+
 
 **代码示例**
 ```lua
@@ -55,16 +58,16 @@ STRINGS.RECIPE_DESC.LOTUS_UMBRELLA = "荷叶做的雨伞" -- 制作栏描述
 
 **作用**: 添加角色专属制作配方。实际上参数和作用都和AddRecipe2一样，专属体现在config中的builder_tag
 
-**参数**：
-- **`name`** (string)：配方的名称。
-- **`ingredients`** (table)：配方所需的原料列表。
-- **`tech`** (string)：解锁该配方所需的科技名称。
-- **`(可选) config`** (table)：一个可选的配置表，同AddRecipe2
-- **`(可选) filters`** (table)：一个可选的过滤器列表，包含要将配方添加到的额外过滤器名称。
+**参数**
+- **`name`** (string): 配方的名称。
+- **`ingredients`** (table): 配方所需的原料列表。
+- **`tech`** (string): 解锁该配方所需的科技名称。
+- **`(可选) config`** (table): 一个可选的配置表，同AddRecipe2
+- **`(可选) filters`** (table): 一个可选的过滤器列表，包含要将配方添加到的额外过滤器名称。
 
-**返回值**：
+**返回值**: 
 
-- **`rec`** (Recipe2)：创建的 **`Recipe2`** 对象。
+- **`rec`** (Recipe2): 创建的 **`Recipe2`** 对象。
 
 **代码示例**
 ```lua
@@ -84,14 +87,14 @@ AddCharacterRecipe("lotus_umbrella_few", {Ingredient("cutgrass", 1)}, TECH.NONE,
 
 **参数**
 
-- **`filter_def`** (table)：过滤器定义，包括以下字段：
-    - **`name`** (string)：过滤器的ID。主要用于两处，一是 **`STRINGS.UI.CRAFTING_FILTERS[name]`**。赋值给出在UI界面上显示的过滤器名字，二是在其它API使用过滤器作为参数时用于指代，请参考示例代码。
-    - **`atlas`** (string 或 function)：图标的图集，可以是字符串或函数。
-    - **`image`** (string 或 function)：显示在制作菜单中的图标，可以是字符串或函数。
-    - **`(可选) image_size`** (table)：自定义图像尺寸，默认64。
-    - **`(可选) custom_pos`** (table)：自定义的过滤器位置，默认为false。 如果为 true，则过滤器图标不会被添加到网格中，而是把这个分类下的物品都放在mod物品分类下。
-    - **`recipes`** (table)：*不支持此字段！* 请创建过滤器后，将过滤器传递给 **`AddRecipe2()`** 或 **`AddRecipeToFilter()`** 函数。
-- **`(可选) index`** (number)：插入过滤器定义的索引。如果提供，将在指定索引处插入过滤器定义；否则，将过滤器定义添加到列表末尾。
+- **`filter_def`** (table): 过滤器定义，包括以下字段: 
+    - **`name`** (string): 过滤器的ID。主要用于两处，一是 **`STRINGS.UI.CRAFTING_FILTERS[name]`**。赋值给出在UI界面上显示的过滤器名字，二是在其它API使用过滤器作为参数时用于指代，请参考示例代码。
+    - **`atlas`** (string 或 function): 图标的图集，可以是字符串或函数。
+    - **`image`** (string 或 function): 显示在制作菜单中的图标，可以是字符串或函数。
+    - **`(可选) image_size`** (table): 自定义图像尺寸，默认64。
+    - **`(可选) custom_pos`** (table): 自定义的过滤器位置，默认为false。 如果为 true，则过滤器图标不会被添加到网格中，而是把这个分类下的物品都放在mod物品分类下。
+    - **`recipes`** (table): *不支持此字段！* 请创建过滤器后，将过滤器传递给 **`AddRecipe2()`** 或 **`AddRecipeToFilter()`** 函数。
+- **`(可选) index`** (number): 插入过滤器定义的索引。如果提供，将在指定索引处插入过滤器定义；否则，将过滤器定义添加到列表末尾。
 
 **代码示例**
 ```lua
@@ -114,13 +117,15 @@ AddRecipe2("my_custom_recipe", ingredients, tech, config, {"SAMANSHA"})
 
 ### AddRecipeToFilter
 
-**作用**：将配方添加到指定的过滤器中。
+**作用**: 将配方添加到指定的过滤器中。
 
-**参数**：
-- **`recipe_name`** (string)：要添加的配方名称。
-- **`filter_name`** (string)：要添加配方的过滤器名称。
+**参数**
+
+- **`recipe_name`** (string): 要添加的配方名称。
+- **`filter_name`** (string): 要添加配方的过滤器名称。
 
 **代码示例**
+
 ```lua
 -- 将荷叶伞放到「雨具」分类
 AddRecipeToFilter("lotus_umbrella","RAIN")
@@ -128,27 +133,111 @@ AddRecipeToFilter("lotus_umbrella","RAIN")
 
 ### RemoveRecipeFromFilter
 
-**作用**：从指定的过滤器中移除配方。
-**参数**：
-- **`recipe_name`** (string)：要移除的配方名称。
-- **`filter_name`** (string)：要从中移除配方的过滤器名称。
+**作用**: 从指定的过滤器中移除配方。
+
+**参数**
+
+- **`recipe_name`** (string): 要移除的配方名称。
+- **`filter_name`** (string): 要从中移除配方的过滤器名称。
 
 
 **代码示例**
+
 ```lua
 -- 将斧头移出「工具」分类
 RemoveRecipeFromFilter("axe", "TOOLS")
 ```
 
 
-### 待验证
+### AddDeconstructRecipe
 
-以下API还需要验证测试
+**作用**: 添加分解配方，不会在任何过滤器下出现，这只是供「分解法杖」或敲碎不可制作的物品而设计的。
 
-* AddDeconstructRecipe 添加拆解配方
-* AddPrototyperDef 添加原型制作器定义
-* AddRecipePostInit	修改指定制作配方
-* AddRecipePostInitAny 修改任意制作配方
+**参数**
+
+- **`name`** (string): 要添加配方的prefab名。
+- **`return_ingredients`** (string): 返还的材料
+
+
+**代码示例**
+
+```lua
+-- 分解斧头得到一个燧石
+AddDeconstructRecipe("axe", "flint")
+```
+
+
+### AddPrototyperDef
+
+**作用**: 自定义原型机(研究或制作站)在制作菜单中的显示方式。光看这个名字有点难理解，其实原型机就是指科学机器、炼金机器、远古制作台这类东西，过年活动时的神龛也算此类。角色站在旁边时可以制作对应的物品
+**参数**
+
+- **`prototyper_prefab`** (string): 用于原型机的prefab名
+- **`prototyper_def`** (table)
+    - **`icon_atlas`** (string): 图标文档
+    - **`icon_image`** (string): 图标图片
+    - **`action_str`** (string): 「建造」按钮显示的字符串，比如神龛显示的是「供奉」
+    - **`is_crafting_station`** (bool): 是否是制作站，也就是是否只能在停留附近时才能制作对应物品
+    - **`filter_text`** (string): 在过滤器上的名称
+
+
+**代码示例**
+
+```lua
+local prototyper_prefab = "moon_altar"
+prototyper_def = {
+    icon_atlas = "images/xxxx.xml", 
+    icon_image = "moon_altar.tex",
+    is_crafting_station = true,
+    action_str = "生产",
+    filter_text = "月之产品“
+},
+
+AddPrototyperDef(prototyper_prefab, prototyper_def) 
+```
+
+
+### AddRecipePostInit
+
+**作用**: 修改指定的Recipe
+
+**参数**
+
+- **`recipe`** (string): 要修改的recipe名
+- **`fn`** (function): 修改函数，传入参数为这个recipe对象
+
+**代码示例**
+
+```lua
+local function fn(recipe)
+    -- 修改制作栏描述
+    recipe.description = "适合砍树"
+end
+
+AddRecipePostInit("axe", fn)
+```
+
+
+### AddRecipePostInitAny
+
+**作用**: 修改任意Recipe
+
+**参数**
+
+- **`fn`** (function): 修改函数，传入参数为recipe对象。这个修改会对所有的recipe生效
+
+
+**代码示例**
+
+```lua
+local function fn(recipe)
+    -- 统一修改制作栏描述
+    local old_str = recipe.description
+    recipe.description = "描述: " ... old_str
+end
+
+AddRecipePostInitAny(fn)
+```
 
 
 ### 已废弃
