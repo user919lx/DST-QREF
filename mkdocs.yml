@@ -8,12 +8,21 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - toc.follow
+    - content.code.copy
+    - content.code.annotate
   language: zh
 plugins:
   - table-reader
 markdown_extensions:
   - toc:
       permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
 extra:
   # alternate:
   #   - name: 中文
@@ -30,6 +39,7 @@ nav:
   - 手册:
     - 系统组件(WIP): 'system_component.md'
     - 组件(WIP): 'component.md'
+    - ModUtil: 'modutil.md'
     - AI:
       - 动作节点: 'brain_action.md'
       - 修饰节点: 'brain_dec.md'

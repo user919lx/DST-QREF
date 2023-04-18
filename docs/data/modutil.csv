@@ -1,0 +1,82 @@
+﻿函数名,输入参数,作用,分类,可用范围,已解析
+GetModConfigData,"optionname, get_local_config",获取模组配置数据,Mod系统,全部,否
+ReloadFrontEndAssets,(无参数),重新加载前端资源,Mod系统,全部,否
+ReloadPreloadAssets,(无参数),重新加载预加载资源,Mod系统,全部,否
+AddGameMode,"game_mode, game_mode_text",[已废弃]添加游戏模式。此功能转移到了modinfo中进行定义,地图,全部,否
+AddLevel,"arg1, arg2, ...",添加level,地图,全部,否
+AddLevelPreInit,"levelid, fn",修改level,地图,全部,否
+AddLevelPreInitAny,fn,修改全部level,地图,全部,否
+AddLocation,"arg1, ...",添加location,地图,全部,否
+AddRoom,"arg1, ...",添加room,地图,全部,否
+AddRoomPreInit,"roomname, fn",修改room,地图,全部,否
+AddStartLocation,"arg1, ...",添加startlocation,地图,全部,否
+AddTask,"arg1, ...",添加task,地图,全部,否
+AddTaskPreInit,"taskname, fn",修改task,地图,全部,否
+AddTaskSet,"arg1, ...",添加taskset,地图,全部,否
+AddTaskSetPreInit,"tasksetname, fn",修改taskset,地图,全部,否
+AddTaskSetPreInitAny,fn,修改全部taskset,地图,全部,否
+AddCustomizeGroup,"category, name, text, desc, atlas, order",添加自定义分组,建房UI,全部,否
+AddCustomizeItem,"category, group, name, itemsettings",添加自定义项目,建房UI,全部,否
+GetCustomizeDescription,description,获取自定义描述,建房UI,全部,否
+RemoveCustomizeGroup,"category, name",删除自定义分组,建房UI,全部,否
+RemoveCustomizeItem,"category, name",删除自定义项目,建房UI,全部,否
+AddClassPostConstruct,"package, fn",[猜测]与类修改有关，常用于UI组件修改,其它,全部,否
+AddGamePostInit,fn,[猜测]添加游戏后初始化函数，较少用到,其它,全部,否
+AddGlobalClassPostConstruct,"package, classname, fn",[猜测]与类修改有关，可指定单个类，常用于UI组件修改,其它,全部,否
+AddSimPostInit,fn,[猜测]添加模拟后初始化函数，较少用到,其它,全部,否
+AddBrainPostInit,"brain, fn",修改brain,AI,仅modmain,否
+AddLoadingTip,"stringtable, id, tipstring, controltipdata",添加加载提示,Mod系统,仅modmain,否
+AddModCharacter,"name, gender, modes",添加Mod角色,Mod系统,仅modmain,否
+RegisterInventoryItemAtlas,"atlas, prefabname",注册物品栏物品图集,Mod系统,仅modmain,否
+RemoveDefaultCharacter,name,移除默认角色,Mod系统,仅modmain,否
+RemoveLoadingTip,"stringtable, id",移除加载提示,Mod系统,仅modmain,否
+SetLoadingTipCategoryIcon,"category, categoryatlas, categoryicon",设置加载提示类别图标,Mod系统,仅modmain,否
+SetLoadingTipCategoryWeights,"weighttable, weightdata",设置加载提示类别权重,Mod系统,仅modmain,否
+AddStategraphActionHandler,"stategraph, handler",给指定sg添加ActionHandler,SG,仅modmain,否
+AddStategraphEvent,"stategraph, event",给指定sg添加Event,SG,仅modmain,否
+AddStategraphPostInit,"stategraph, fn",修改指定sg,SG,仅modmain,否
+AddStategraphState,"stategraph, state",给指定sg添加state,SG,仅modmain,否
+AddAction,"id, str, fn",添加动作,动作,仅modmain,否
+AddComponentAction,"actiontype, component, fn",添加组件动作,动作,仅modmain,否
+AddComponentPostInit,"component, fn",修改指定组件,基础修改,仅modmain,否
+AddPlayerPostInit,fn,修改玩家,基础修改,仅modmain,否
+AddPrefabPostInit,"prefab, fn",修改指定prefab,基础修改,仅modmain,否
+AddPrefabPostInitAny,fn,修改任意Prefab,基础修改,仅modmain,否
+AddPopup,id,添加弹窗，未知用途,其它,仅modmain,否
+AddUserCommand,"command_name, data",添加用户命令,其它,仅modmain,否
+AddVoteCommand,"command_name, init_options_fn, process_result_fn, vote_timeout",添加投票命令,其它,仅modmain,否
+ExcludeClothingSymbolForModCharacter,"name, symbol",为模组角色排除服装符号,其它,仅modmain,否
+LoadPOFile,"path, lang",加载翻译文件,其它,仅modmain,否
+SetModHUDFocus,"focusid, hasfocus",设置ModHUD焦点,其它,仅modmain,否
+AddModShadersInit,fn,添加shader初始化函数,特效,仅modmain,否
+AddModShadersSortAndEnable,fn,添加shader排序和启用函数,特效,仅modmain,否
+AddClientModRPCHandler,"namespace, name, fn",添加客户端ModRPCHandler,网络,仅modmain,否
+AddModRPCHandler,"namespace, name, fn",添加ModRPCHandler,网络,仅modmain,否
+AddReplicableComponent,name,添加replica,网络,仅modmain,否
+AddShardModRPCHandler,"namespace, name, fn",添加分片ModRPCHandler,网络,仅modmain,否
+GetClientModRPC,"namespace, name",获取客户端ModRPC,网络,仅modmain,否
+GetClientModRPCHandler,"namespace, name",获取客户端ModRPCHandler,网络,仅modmain,否
+GetModRPC,"namespace, name",获取ModRPC,网络,仅modmain,否
+GetModRPCHandler,"namespace, name",获取ModRPCHandler,网络,仅modmain,否
+GetShardModRPC,"namespace, name",获取分片ModRPC,网络,仅modmain,否
+GetShardModRPCHandler,"namespace, name",获取分片ModRPCHandler,网络,仅modmain,否
+SendModRPCToClient,"id_table, ...",向客户端ModRPC,网络,仅modmain,否
+SendModRPCToServer,"id_table, ...",向主机端发送ModRPC,网络,仅modmain,否
+SendModRPCToShard,"id_table, ...",向分片发送ModRPC,网络,仅modmain,否
+RemapSoundEvent,"name, new_name",重映射声音事件,音效,仅modmain,否
+RemoveRemapSoundEvent,name,移除重映射声音事件,音效,仅modmain,否
+AddMinimapAtlas,atlaspath,添加小地图图标,游戏UI,仅modmain,否
+AddCharacterRecipe,"name, ingredients, tech, config, extra_filters",添加角色专属制作配方,制作,仅modmain,是
+AddCookerRecipe,"cooker, recipe",添加烹饪配方,烹饪,仅modmain,否
+AddDeconstructRecipe,"name, return_ingredients",添加拆解配方,制作,仅modmain,否
+AddIngredientValues,"names, tags, cancook, candry",添加食材属性值(批量修改),烹饪,仅modmain,否
+AddPrototyperDef,"prototyper_prefab, data",[待测试]添加原型制作器定义,制作,仅modmain,否
+AddRecipe,"arg1, ...",[已废弃]添加新制作配方,制作,仅modmain,是
+AddRecipe2,"name, ingredients, tech, config, filters",添加新制作配方,制作,仅modmain,是
+AddRecipeFilter,"filter_def, index",添加制作配方分类过滤器,制作,仅modmain,是
+AddRecipePostInit,"recipename, fn",修改指定制作配方,制作,仅modmain,否
+AddRecipePostInitAny,fn,修改任意制作配方,制作,仅modmain,否
+AddRecipeTab,"rec_str, rec_sort, rec_atlas, rec_icon, rec_owner_tag, rec_crafting_station",[已废弃]添加制作栏分类,制作,仅modmain,是
+AddRecipeToFilter,"recipe_name, filter_name",将制作配方添加到分类过滤器,制作,仅modmain,是
+Recipe,...,[已废弃]创建配方,制作,仅modmain,是
+RemoveRecipeFromFilter,"recipe_name, filter_name",从过滤器中移除制作配方,制作,仅modmain,是
