@@ -163,7 +163,7 @@ RemoveRecipeFromFilter("axe", "TOOLS")
 
 ```lua
 -- 分解斧头得到一个燧石
-AddDeconstructRecipe("axe", {Ingredient("flint", 1))
+AddDeconstructRecipe("axe", {Ingredient("flint", 1)})
 ```
 
 
