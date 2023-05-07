@@ -247,3 +247,60 @@ AddRecipePostInitAny(fn)
 * AddRecipe 添加新制作配方
 * Recipe 创建配方
 * AddRecipeTab 添加制作栏分类
+
+## 其它
+
+### AddUserCommand
+
+**作用**: 向游戏中添加一个自定义用户命令。
+
+**参数**
+
+- **`name`** (string): 命令的名称。
+- **`data`** (table): 命令的详细信息，包括以下字段:
+    - **`(可选) aliases`** (table): 命令的别名列表。
+    - **`(可选) prettyname`** (string): 写在UI上的名称。
+    - **`(可选) desc`** (string): 命令的描述。
+    - **`permission`** (string): 命令所需的权限（如：COMMAND_PERMISSION.USER）。
+    - **`(可选) slash`** (boolean): 是否在命令前加斜杠。
+    - **`(可选) usermenu`** (boolean): 是否在用户菜单中显示命令。
+    - **`(可选) servermenu`** (boolean): 是否在服务器菜单中显示命令。
+    - **`(可选) params`** (table): 命令的参数列表。
+    - **`(可选) paramsoptional`** (table): 参数是否可选的布尔值列表。
+    - **`(可选) localfn`** (function): 本地函数，当命令被调用时执行。
+    - **`(可选) serverfn`** (function): 服务器函数，当命令被调用时执行。
+    - **`(可选)vote`** (boolean): 是否允许对此命令进行投票，默认为false。
+    - **`(可选)votetimeout`** (number): 投票持续时间（秒）。
+    - **`(可选)voteminstartage`** (number): 用户必须在服务器上待至少多少秒才能开始投票。
+    - **`(可选)voteminpasscount`** (number): 投票通过所需的最小票数。
+    - **`(可选)votecountvisible`** (boolean): 投票结果是否对玩家可见。
+    - **`(可选)voteallownotvoted`** (boolean): 是否允许未投票的玩家看到投票结果。
+    - **`(可选)voteoptions`** (table): 投票选项
+    - **`(可选)votetitlefmt`** (string): 投票标题的格式
+    - **`(可选)votenamefmt`** (string): 投票名称的格式
+    - **`(可选)votepassedfmt`** (string): 投票通过后的显示信息
+    - **`(可选)votecanstartfn`** (function): 检查投票是否可以开始的函数
+    - **`(可选)voteresultfn`** (function): 根据投票结果执行相应操作的函数
+
+**代码示例**
+```lua
+AddUserCommand("hello", {
+    aliases = {"hi", "hey"},
+    prettyname = "Hello Command",
+    desc = "Say hello to the server",
+    permission = GLOBAL.COMMAND_PERMISSION.USER,
+    slash = true,
+    usermenu = false,
+    servermenu = false,
+    params = {"intro"},
+    paramsoptional = {true},
+    vote = false,
+    serverfn = function(params, caller)
+        if params.intro ~= nil then
+            GLOBAL.TheNet:Say("Hello, everyone! "..params.intro)
+        else
+            GLOBAL.TheNet:Say("Hello, everyone!")
+        end
+    end,
+})
+```
