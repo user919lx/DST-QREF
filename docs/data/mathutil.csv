@@ -1,0 +1,16 @@
+﻿functtion,desc,params,return
+GetSineVal,返回基于游戏时间的正弦波值,mod（可选）：振幅；abs（可选）：是否返回正弦波的绝对值；inst（可选）：具有时间存活属性的游戏对象,正弦波的当前值
+Lerp,根据参数t在数值a和b之间进行插值,a、b：数值区间的两个端点；t：用于插值的参数（0<=t<=1）,插值结果
+Remap,将值i从区间a-b映射到区间x-y,"i：需要映射的值；a,b,x,y：两个区间的端点",映射结果
+RoundBiasedUp,向上偏置取整，即对0.5以上的小数部分向上取整,num：要进行取整的数；idp：保留的小数位数,取整结果
+RoundBiasedDown,向下偏置取整，即对0.5以下的小数部分向下取整,num：要进行取整的数；idp：保留的小数位数,取整结果
+RoundToNearest,将numToRound四舍五入到最接近的multiple的倍数,numToRound：需要四舍五入的数；multiple：倍数,四舍五入结果
+math.clamp 或 Clamp,将数值限制在给定的范围内,"num：要限制的数值；min,max：范围的最小值和最大值",如果num小于min，返回min；如果num大于max，返回max；否则返回num
+IsNumberEven,判断一个数是否为偶数,num：需要判断的数,是偶数返回true，否则返回false
+DistXYSq 和 DistXZSq,计算两点在二维平面上的距离的平方,"p1,p2：具有x,y或z属性的点对象",两点间的距离的平方
+math.range,返回一个在给定范围内的数值列表,"start,stop：范围的开始和结束值；step（可选）：步长",返回一个在给定范围内的数值列表
+math.diff,返回两个数的差的绝对值,"a,b：两个数",两数差的绝对值
+ReduceAngle,将一个角度调整至-180到180的范围内,rot：要调整的角度,调整后的角度
+DiffAngle,计算两个角度的差的绝对值,"rot1,rot2：两个角度",两角度差的绝对值
+ReduceAngleRad,将一个角度调整至-π到π的范围内（弧度制）,rot：要调整的角度,调整后的角度
+DiffAngleRad,计算两个角度的差的绝对值（弧度制）,"rot1,rot2：两个角度",两角度差的绝对值

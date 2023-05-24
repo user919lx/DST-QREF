@@ -41,7 +41,9 @@ nav:
   - 手册:
     - 系统组件(WIP): 'system_component.md'
     - 组件(WIP): 'component.md'
-    - ModUtil: 'modutil.md'
+    - 工具-Util:
+      - ModAPI-ModUtil: 'modutil.md'
+      - 数学工具-MathUtil: 'mathutil.md'
     - AI:
       - 动作节点: 'brain_action.md'
       - 修饰节点: 'brain_dec.md'
