@@ -1,0 +1,1197 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../modutil/">
+      
+      
+        <link rel="next" href="../brain_action/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
+    
+    
+      
+        <title>数学工具-MathUtil - 饥荒Mod开发速查手册</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.85bb2934.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="饥荒Mod开发速查手册" class="md-header__button md-logo" aria-label="饥荒Mod开发速查手册" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            饥荒Mod开发速查手册
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              数学工具-MathUtil
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/user919lx/dst-qref" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../system_component/" class="md-tabs__link md-tabs__link--active">
+        手册
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../about/" class="md-tabs__link">
+      About
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="饥荒Mod开发速查手册" class="md-nav__button md-logo" aria-label="饥荒Mod开发速查手册" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    饥荒Mod开发速查手册
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/user919lx/dst-qref" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          手册
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          手册
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system_component/" class="md-nav__link">
+        系统组件(WIP)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../component/" class="md-nav__link">
+        组件(WIP)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          工具-Util
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          工具-Util
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modutil/" class="md-nav__link">
+        ModAPI-ModUtil
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          数学工具-MathUtil
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        数学工具-MathUtil
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    函数列表
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getsineval" class="md-nav__link">
+    GetSineVal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lerp" class="md-nav__link">
+    Lerp
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remap" class="md-nav__link">
+    Remap
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roundbiasedup" class="md-nav__link">
+    RoundBiasedUp
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roundbiaseddown" class="md-nav__link">
+    RoundBiasedDown
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roundtonearest" class="md-nav__link">
+    RoundToNearest
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mathclamp-clamp" class="md-nav__link">
+    math.clamp 或 Clamp
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#isnumbereven" class="md-nav__link">
+    IsNumberEven
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distxysq" class="md-nav__link">
+    DistXYSq
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distxzsq" class="md-nav__link">
+    DistXZSq
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mathrange" class="md-nav__link">
+    math.range
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reduceangle" class="md-nav__link">
+    ReduceAngle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diffangle" class="md-nav__link">
+    DiffAngle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reduceanglerad" class="md-nav__link">
+    ReduceAngleRad
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diffanglerad" class="md-nav__link">
+    DiffAngleRad
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+          AI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          AI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../brain_action/" class="md-nav__link">
+        动作节点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../brain_dec/" class="md-nav__link">
+        修饰节点
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fx/" class="md-nav__link">
+        特效(WIP)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    函数列表
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getsineval" class="md-nav__link">
+    GetSineVal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lerp" class="md-nav__link">
+    Lerp
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remap" class="md-nav__link">
+    Remap
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roundbiasedup" class="md-nav__link">
+    RoundBiasedUp
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roundbiaseddown" class="md-nav__link">
+    RoundBiasedDown
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roundtonearest" class="md-nav__link">
+    RoundToNearest
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mathclamp-clamp" class="md-nav__link">
+    math.clamp 或 Clamp
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#isnumbereven" class="md-nav__link">
+    IsNumberEven
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distxysq" class="md-nav__link">
+    DistXYSq
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distxzsq" class="md-nav__link">
+    DistXZSq
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mathrange" class="md-nav__link">
+    math.range
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reduceangle" class="md-nav__link">
+    ReduceAngle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diffangle" class="md-nav__link">
+    DiffAngle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reduceanglerad" class="md-nav__link">
+    ReduceAngleRad
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diffanglerad" class="md-nav__link">
+    DiffAngleRad
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>数学工具-MathUtil</h1>
+
+<blockquote>
+<p>本文的函数定义在游戏脚本跟目录下的<code>mathutil.lua</code>，在Mod以外的环境可以直接使用，在Mod环境(即modmain,modmainworldgen,和通过modimport导入的文件)下，需要通过GLOBAL调取。这些函数是一些数学工具函数，能够帮助你完成一些数学相关的计算</p>
+</blockquote>
+<h2 id="_1">函数列表<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">functtion</th>
+<th align="left">desc</th>
+<th align="left">params</th>
+<th align="left">return</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">GetSineVal</td>
+<td align="left">返回基于游戏时间的正弦波值</td>
+<td align="left">mod（可选）：振幅；abs（可选）：是否返回正弦波的绝对值；inst（可选）：具有时间存活属性的游戏对象</td>
+<td align="left">正弦波的当前值</td>
+</tr>
+<tr>
+<td align="left">Lerp</td>
+<td align="left">根据参数t在数值a和b之间进行插值</td>
+<td align="left">a、b：数值区间的两个端点；t：用于插值的参数（0&lt;=t&lt;=1）</td>
+<td align="left">插值结果</td>
+</tr>
+<tr>
+<td align="left">Remap</td>
+<td align="left">将值i从区间a-b映射到区间x-y</td>
+<td align="left">i：需要映射的值；a,b,x,y：两个区间的端点</td>
+<td align="left">映射结果</td>
+</tr>
+<tr>
+<td align="left">RoundBiasedUp</td>
+<td align="left">向上偏置取整，即对0.5以上的小数部分向上取整</td>
+<td align="left">num：要进行取整的数；idp：保留的小数位数</td>
+<td align="left">取整结果</td>
+</tr>
+<tr>
+<td align="left">RoundBiasedDown</td>
+<td align="left">向下偏置取整，即对0.5以下的小数部分向下取整</td>
+<td align="left">num：要进行取整的数；idp：保留的小数位数</td>
+<td align="left">取整结果</td>
+</tr>
+<tr>
+<td align="left">RoundToNearest</td>
+<td align="left">将numToRound四舍五入到最接近的multiple的倍数</td>
+<td align="left">numToRound：需要四舍五入的数；multiple：倍数</td>
+<td align="left">四舍五入结果</td>
+</tr>
+<tr>
+<td align="left">math.clamp 或 Clamp</td>
+<td align="left">将数值限制在给定的范围内</td>
+<td align="left">num：要限制的数值；min,max：范围的最小值和最大值</td>
+<td align="left">如果num小于min，返回min；如果num大于max，返回max；否则返回num</td>
+</tr>
+<tr>
+<td align="left">IsNumberEven</td>
+<td align="left">判断一个数是否为偶数</td>
+<td align="left">num：需要判断的数</td>
+<td align="left">是偶数返回true，否则返回false</td>
+</tr>
+<tr>
+<td align="left">DistXYSq 和 DistXZSq</td>
+<td align="left">计算两点在二维平面上的距离的平方</td>
+<td align="left">p1,p2：具有x,y或z属性的点对象</td>
+<td align="left">两点间的距离的平方</td>
+</tr>
+<tr>
+<td align="left">math.range</td>
+<td align="left">返回一个在给定范围内的数值列表</td>
+<td align="left">start,stop：范围的开始和结束值；step（可选）：步长</td>
+<td align="left">返回一个在给定范围内的数值列表</td>
+</tr>
+<tr>
+<td align="left">math.diff</td>
+<td align="left">返回两个数的差的绝对值</td>
+<td align="left">a,b：两个数</td>
+<td align="left">两数差的绝对值</td>
+</tr>
+<tr>
+<td align="left">ReduceAngle</td>
+<td align="left">将一个角度调整至-180到180的范围内</td>
+<td align="left">rot：要调整的角度</td>
+<td align="left">调整后的角度</td>
+</tr>
+<tr>
+<td align="left">DiffAngle</td>
+<td align="left">计算两个角度的差的绝对值</td>
+<td align="left">rot1,rot2：两个角度</td>
+<td align="left">两角度差的绝对值</td>
+</tr>
+<tr>
+<td align="left">ReduceAngleRad</td>
+<td align="left">将一个角度调整至-π到π的范围内（弧度制）</td>
+<td align="left">rot：要调整的角度</td>
+<td align="left">调整后的角度</td>
+</tr>
+<tr>
+<td align="left">DiffAngleRad</td>
+<td align="left">计算两个角度的差的绝对值（弧度制）</td>
+<td align="left">rot1,rot2：两个角度</td>
+<td align="left">两角度差的绝对值</td>
+</tr>
+</tbody>
+</table>
+<h2 id="getsineval">GetSineVal<a class="headerlink" href="#getsineval" title="Permanent link">&para;</a></h2>
+<p><strong>作用</strong>: 基于游戏时间返回一个正弦波的值。</p>
+<p><strong>参数</strong></p>
+<ul>
+<li><code>mod</code> (number, 可选): 修改正弦波周期的参数。</li>
+<li><code>abs</code> (boolean, 可选): 是否返回正弦波的绝对值。</li>
+<li><code>inst</code> (object, 可选): 如果提供，将使用这个对象的存活时间而不是游戏时间。</li>
+</ul>
+<p><strong>返回值</strong>: 正弦波的当前值。</p>
+<p><strong>代码示例</strong>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">local</span> <span class="n">mod</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">local</span> <span class="n">abs</span> <span class="o">=</span> <span class="kc">true</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kd">local</span> <span class="n">val</span> <span class="o">=</span> <span class="n">GetSineVal</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">abs</span><span class="p">)</span>
+</span></code></pre></div></p>
+<h2 id="lerp">Lerp<a class="headerlink" href="#lerp" title="Permanent link">&para;</a></h2>
+<p><strong>作用</strong>: 在数值a和b之间根据参数t进行线性插值。</p>
+<p><strong>参数</strong></p>
+<ul>
+<li><code>a</code> (number): 范围的开始值。</li>
+<li><code>b</code> (number): 范围的结束值。</li>
+<li><code>t</code> (number): 插值参数，通常在0和1之间。</li>
+</ul>
+<p><strong>返回值</strong>: 插值结果。</p>
+<p><strong>代码示例</strong>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">local</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">local</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kd">local</span> <span class="n">t</span> <span class="o">=</span> <span class="mf">0.5</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">Lerp</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="c1">-- 结果为5</span>
+</span></code></pre></div></p>
+<h2 id="remap">Remap<a class="headerlink" href="#remap" title="Permanent link">&para;</a></h2>
+<p><strong>作用</strong>: 将一个值从一个范围映射到另一个范围。</p>
+<p><strong>参数</strong></p>
+<ul>
+<li><code>i</code> (number): 需要被重新映射的值。</li>
+<li><code>a</code> (number): 原始范围的起始值。</li>
+<li><code>b</code> (number): 原始范围的结束值。</li>
+<li><code>x</code> (number): 新范围的起始值。</li>
+<li><code>y</code> (number): 新范围的结束值。</li>
+</ul>
+<p><strong>返回值</strong>: 重新映射后的值。</p>
+<p><strong>代码示例</strong>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">local</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">5</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">local</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kd">local</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kd">local</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kd">local</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">100</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">Remap</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1">-- 结果为50</span>
+</span></code></pre></div></p>
+<h2 id="roundbiasedup">RoundBiasedUp<a class="headerlink" href="#roundbiasedup" title="Permanent link">&para;</a></h2>
+<p><strong>作用</strong>: 对一个数进行四舍五入，0.5的值总是向上舍入。</p>
+<p><strong>参数</strong></p>
+<ul>
+<li><code>num</code> (number): 需要四舍五入的数字。</li>
+<li><code>idp</code> (number, 可选): 要保留的小数位数。</li>
+</ul>
+<p><strong>返回值</strong>: 四舍五入后的数字。</p>
+<p><strong>代码示例</strong>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">local</span> <span class="n">num</span> <span class="o">=</span> <span class="mf">3.5</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kd">local</span> <span class="n">idp</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">RoundBiasedUp</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">idp</span><span class="p">)</span> <span class="c1">-- 结果为4</span>
+</span></code></pre></div></p>
+<h2 id="roundbiaseddown">RoundBiasedDown<a class="headerlink" href="#roundbiaseddown" title="Permanent link">&para;</a></h2>
+<p><strong>作用</strong>: 对一个数进行四舍五入，0.5的值总是向下舍入。</p>
+<p><strong>参数</strong></p>
+<ul>
+<li><code>num</code> (number): 需要四舍五入的数字。</li>
+<li><code>idp</code> (number, 可选): 要保留的小数位数。</li>
+</ul>
+<p><strong>返回值</strong>: 四舍五入后的数字。</p>
+<p><strong>代码示例</strong>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">local</span> <span class="n">num</span> <span class="o">=</span> <span class="mf">3.5</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kd">local</span> <span class="n">idp</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">RoundBiasedDown</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">idp</span><span class="p">)</span> <span class="c1">-- 结果为3</span>
+</span></code></pre></div></p>
+<h2 id="roundtonearest">RoundToNearest<a class="headerlink" href="#roundtonearest" title="Permanent link">&para;</a></h2>
+<p><strong>作用</strong>: 将一个数四舍五入到最近的"multiple"的倍数。</p>
+<p><strong>参数</strong></p>
+<ul>
+<li><code>numToRound</code> (number): 需要四舍五入的数字。</li>
+<li><code>multiple</code> (number): 将数字四舍五入到这个参数的倍数。</li>
+</ul>
+<p><strong>返回值</strong>: 四舍五入后的数字。</p>
+<p><strong>代码示例</strong>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">local</span> <span class="n">numToRound</span> <span class="o">=</span> <span class="mi">13</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kd">local</span> <span class="n">multiple</span> <span class="o">=</span> <span class="mi">5</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">RoundToNearest</span><span class="p">(</span><span class="n">numToRound</span><span class="p">,</span> <span class="n">multiple</span><span class="p">)</span> <span class="c1">-- 结果为15</span>
+</span></code></pre></div></p>
+<h2 id="mathclamp-clamp">math.clamp 或 Clamp<a class="headerlink" href="#mathclamp-clamp" title="Permanent link">&para;</a></h2>
+<p><strong>作用</strong>: 限制一个数在一个范围内。</p>
+<p><strong>参数</strong></p>
+<ul>
+<li><code>num</code> (number): 需要被限制的数字。</li>
+<li><code>min</code> (number): 范围的最小值。</li>
+<li><code>max</code> (number): 范围的最大值。</li>
+</ul>
+<p><strong>返回值</strong>: 如果数字在范围内，则返回数字本身；如果数字小于最小值，则返回最小值；如果数字大于最大值，则返回最大值。</p>
+<p><strong>代码示例</strong>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">local</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">15</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kd">local</span> <span class="n">min</span> <span class="o">=</span> <span class="mi">10</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kd">local</span> <span class="n">max</span> <span class="o">=</span> <span class="mi">20</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">Clamp</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">min</span><span class="p">,</span> <span class="n">max</span><span class="p">)</span> <span class="c1">-- 结果为15</span>
+</span></code></pre></div></p>
+<h2 id="isnumbereven">IsNumberEven<a class="headerlink" href="#isnumbereven" title="Permanent link">&para;</a></h2>
+<p><strong>作用</strong>: 检查一个数是否为偶数。</p>
+<p><strong>参数</strong></p>
+<ul>
+<li><code>num</code> (number): 需要检查的数字。</li>
+</ul>
+<p><strong>返回值</strong>: 如果是偶数则返回 true，否则返回 false。</p>
+<p><strong>代码示例</strong>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">local</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">4</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">IsNumberEven</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="c1">-- 结果为 true</span>
+</span></code></pre></div></p>
+<h2 id="distxysq">DistXYSq<a class="headerlink" href="#distxysq" title="Permanent link">&para;</a></h2>
+<p><strong>作用</strong>: 计算两个点在XY平面上的距离的平方。</p>
+<p><strong>参数</strong></p>
+<ul>
+<li><code>p1</code> (table): 第一个点的坐标，形如 {x = x1, y = y1}。</li>
+<li><code>p2</code> (table): 第二个点的坐标，形如 {x = x2, y = y2}。</li>
+</ul>
+<p><strong>返回值</strong>: 两个点在XY平面上的距离的平方。</p>
+<p><strong>代码示例</strong>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">local</span> <span class="n">p1</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">}</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kd">local</span> <span class="n">p2</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">5</span><span class="p">}</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">DistXYSq</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">)</span> <span class="c1">-- 结果为 25</span>
+</span></code></pre></div></p>
+<h2 id="distxzsq">DistXZSq<a class="headerlink" href="#distxzsq" title="Permanent link">&para;</a></h2>
+<p><strong>作用</strong>: 计算两个点在XZ平面上的距离的平方。</p>
+<p><strong>参数</strong></p>
+<ul>
+<li><code>p1</code> (table): 第一个点的坐标，形如 {x = x1, z = z1}。</li>
+<li><code>p2</code> (table): 第二个点的坐标，形如 {x = x2, z = z2}。</li>
+</ul>
+<p><strong>返回值</strong>: 两个点在XZ平面上的距离的平方。</p>
+<p><strong>代码示例</strong>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">local</span> <span class="n">p1</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">1</span><span class="p">}</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kd">local</span> <span class="n">p2</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">5</span><span class="p">}</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">DistXZSq</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">)</span> <span class="c1">-- 结果为 25</span>
+</span></code></pre></div></p>
+<h2 id="mathrange">math.range<a class="headerlink" href="#mathrange" title="Permanent link">&para;</a></h2>
+<p><strong>作用</strong>: 生成一个指定范围和步长的数列。</p>
+<p><strong>参数</strong></p>
+<ul>
+<li><code>start</code> (number): 数列的起始值。</li>
+<li><code>stop</code> (number): 数列的结束值。</li>
+<li><code>step</code> (number): 数列的步长。默认为1。</li>
+</ul>
+<p><strong>返回值</strong>: 生成的数列（table）。</p>
+<p><strong>代码示例</strong>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">local</span> <span class="n">start</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kd">local</span> <span class="n">stop</span> <span class="o">=</span> <span class="mi">10</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="kd">local</span> <span class="n">step</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">math</span><span class="p">.</span><span class="n">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span> <span class="c1">-- 结果为 {1, 3, 5, 7, 9}</span>
+</span></code></pre></div></p>
+<h2 id="reduceangle">ReduceAngle<a class="headerlink" href="#reduceangle" title="Permanent link">&para;</a></h2>
+<p><strong>作用</strong>: 对一个角度进行调整，使其值落在 -180 到 180 之间。</p>
+<p><strong>参数</strong></p>
+<ul>
+<li><code>rot</code> (number): 需要进行调整的角度。</li>
+</ul>
+<p><strong>返回值</strong>: 调整后的角度值。</p>
+<p><strong>代码示例</strong>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">local</span> <span class="n">rot</span> <span class="o">=</span> <span class="mi">360</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">ReduceAngle</span><span class="p">(</span><span class="n">rot</span><span class="p">)</span> <span class="c1">-- 结果为 0</span>
+</span></code></pre></div></p>
+<h2 id="diffangle">DiffAngle<a class="headerlink" href="#diffangle" title="Permanent link">&para;</a></h2>
+<p><strong>作用</strong>: 计算两个角度的绝对差值，返回的差值在0-180之间。</p>
+<p><strong>参数</strong></p>
+<ul>
+<li><code>rot1</code> (number): 第一个角度值。</li>
+<li><code>rot2</code> (number): 第二个角度值。</li>
+</ul>
+<p><strong>返回值</strong>: 两个角度的绝对差值。</p>
+<p><strong>代码示例</strong>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kd">local</span> <span class="n">rot1</span> <span class="o">=</span> <span class="mi">90</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="kd">local</span> <span class="n">rot2</span> <span class="o">=</span> <span class="mi">180</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">DiffAngle</span><span class="p">(</span><span class="n">rot1</span><span class="p">,</span> <span class="n">rot2</span><span class="p">)</span> <span class="c1">-- 结果为 90</span>
+</span></code></pre></div></p>
+<h2 id="reduceanglerad">ReduceAngleRad<a class="headerlink" href="#reduceanglerad" title="Permanent link">&para;</a></h2>
+<p><strong>作用</strong>: 对一个角度进行调整，使其值落在 -π 到 π 之间。</p>
+<p><strong>参数</strong></p>
+<ul>
+<li><code>rot</code> (number): 需要进行调整的角度，单位为弧度。</li>
+</ul>
+<p><strong>返回值</strong>: 调整后的角度值。</p>
+<p><strong>代码示例</strong>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kd">local</span> <span class="n">rot</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="nb">math.pi</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">ReduceAngleRad</span><span class="p">(</span><span class="n">rot</span><span class="p">)</span> <span class="c1">-- 结果为 0</span>
+</span></code></pre></div></p>
+<h2 id="diffanglerad">DiffAngleRad<a class="headerlink" href="#diffanglerad" title="Permanent link">&para;</a></h2>
+<p><strong>作用</strong>: 计算两个角度的绝对差值，返回的差值在0-π之间。</p>
+<p><strong>参数</strong></p>
+<ul>
+<li><code>rot1</code> (number): 第一个角度值，单位为弧度。</li>
+<li><code>rot2</code> (number): 第二个角度值，单位为弧度。</li>
+</ul>
+<p><strong>返回值</strong>: 两个角度的绝对差值。</p>
+<p><strong>代码示例</strong>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kd">local</span> <span class="n">rot1</span> <span class="o">=</span> <span class="nb">math.pi</span> <span class="o">/</span> <span class="mi">2</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="kd">local</span> <span class="n">rot2</span> <span class="o">=</span> <span class="nb">math.pi</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="kd">local</span> <span class="n">result</span> <span class="o">=</span> <span class="n">DiffAngleRad</span><span class="p">(</span><span class="n">rot1</span><span class="p">,</span> <span class="n">rot2</span><span class="p">)</span> <span class="c1">-- 结果为 π / 2</span>
+</span></code></pre></div></p>
+
+
+
+
+
+  <h2 id="__comments">评论</h2>
+  <script src="https://giscus.app/client.js"
+    data-repo="user919lx/DST-QREF-giscus"
+    data-repo-id="R_kgDOJYQ8Xw"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOJYQ8X84CV3He"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="zh-CN"
+    crossorigin="anonymous"
+    async>
+  </script>
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    /* Set palette on initial load */
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate" ? "dark" : "light"
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    /* Register event handlers after documented loaded */
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+          /* Instruct Giscus to change theme */
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:xingxing_fisher@163.com" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.7l167.6-182.9c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "toc.follow", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+    
+  </body>
+</html>
