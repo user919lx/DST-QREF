@@ -15,6 +15,7 @@ comments: true
 **作用**: 基于游戏时间返回一个正弦波的值。
 
 **参数**
+
 - `mod` (number, 可选): 修改正弦波周期的参数。
 - `abs` (boolean, 可选): 是否返回正弦波的绝对值。
 - `inst` (object, 可选): 如果提供，将使用这个对象的存活时间而不是游戏时间。
@@ -32,6 +33,7 @@ local val = GetSineVal(mod, abs)
 **作用**: 在数值a和b之间根据参数t进行线性插值。
 
 **参数**
+
 - `a` (number): 范围的开始值。
 - `b` (number): 范围的结束值。
 - `t` (number): 插值参数，通常在0和1之间。
@@ -50,6 +52,7 @@ local result = Lerp(a, b, t) -- 结果为5
 **作用**: 将一个值从一个范围映射到另一个范围。
 
 **参数**
+
 - `i` (number): 需要被重新映射的值。
 - `a` (number): 原始范围的起始值。
 - `b` (number): 原始范围的结束值。
@@ -72,6 +75,7 @@ local result = Remap(i, a, b, x, y) -- 结果为50
 **作用**: 对一个数进行四舍五入，0.5的值总是向上舍入。
 
 **参数**
+
 - `num` (number): 需要四舍五入的数字。
 - `idp` (number, 可选): 要保留的小数位数。
 
@@ -89,6 +93,7 @@ local result = RoundBiasedUp(num, idp) -- 结果为4
 **作用**: 对一个数进行四舍五入，0.5的值总是向下舍入。
 
 **参数**
+
 - `num` (number): 需要四舍五入的数字。
 - `idp` (number, 可选): 要保留的小数位数。
 
@@ -105,6 +110,7 @@ local result = RoundBiasedDown(num, idp) -- 结果为3
 **作用**: 将一个数四舍五入到最近的"multiple"的倍数。
 
 **参数**
+
 - `numToRound` (number): 需要四舍五入的数字。
 - `multiple` (number): 将数字四舍五入到这个参数的倍数。
 
@@ -120,6 +126,7 @@ local result = RoundToNearest(numToRound, multiple) -- 结果为15
 **作用**: 限制一个数在一个范围内。
 
 **参数**
+
 - `num` (number): 需要被限制的数字。
 - `min` (number): 范围的最小值。
 - `max` (number): 范围的最大值。
@@ -138,6 +145,7 @@ local result = Clamp(num, min, max) -- 结果为15
 **作用**: 检查一个数是否为偶数。
 
 **参数**
+
 - `num` (number): 需要检查的数字。
 
 **返回值**: 如果是偶数则返回 true，否则返回 false。
@@ -154,6 +162,7 @@ local result = IsNumberEven(num) -- 结果为 true
 **作用**: 计算两个点在XY平面上的距离的平方。
 
 **参数**
+
 - `p1` (table): 第一个点的坐标，形如 {x = x1, y = y1}。
 - `p2` (table): 第二个点的坐标，形如 {x = x2, y = y2}。
 
@@ -171,6 +180,7 @@ local result = DistXYSq(p1, p2) -- 结果为 25
 **作用**: 计算两个点在XZ平面上的距离的平方。
 
 **参数**
+
 - `p1` (table): 第一个点的坐标，形如 {x = x1, z = z1}。
 - `p2` (table): 第二个点的坐标，形如 {x = x2, z = z2}。
 
@@ -188,6 +198,7 @@ local result = DistXZSq(p1, p2) -- 结果为 25
 **作用**: 生成一个指定范围和步长的数列。
 
 **参数**
+
 - `start` (number): 数列的起始值。
 - `stop` (number): 数列的结束值。
 - `step` (number): 数列的步长。默认为1。
@@ -207,6 +218,7 @@ local result = math.range(start, stop, step) -- 结果为 {1, 3, 5, 7, 9}
 **作用**: 对一个角度进行调整，使其值落在 -180 到 180 之间。
 
 **参数**
+
 - `rot` (number): 需要进行调整的角度。
 
 **返回值**: 调整后的角度值。
@@ -221,6 +233,7 @@ local result = ReduceAngle(rot) -- 结果为 0
 **作用**: 计算两个角度的绝对差值，返回的差值在0-180之间。
 
 **参数**
+
 - `rot1` (number): 第一个角度值。
 - `rot2` (number): 第二个角度值。
 
@@ -238,6 +251,7 @@ local result = DiffAngle(rot1, rot2) -- 结果为 90
 **作用**: 对一个角度进行调整，使其值落在 -π 到 π 之间。
 
 **参数**
+
 - `rot` (number): 需要进行调整的角度，单位为弧度。
 
 **返回值**: 调整后的角度值。
@@ -253,6 +267,7 @@ local result = ReduceAngleRad(rot) -- 结果为 0
 **作用**: 计算两个角度的绝对差值，返回的差值在0-π之间。
 
 **参数**
+
 - `rot1` (number): 第一个角度值，单位为弧度。
 - `rot2` (number): 第二个角度值，单位为弧度。
 
